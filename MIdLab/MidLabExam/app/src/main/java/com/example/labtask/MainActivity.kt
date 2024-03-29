@@ -135,7 +135,7 @@ fun MainScreen() {
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddTransaction() {
+fun AddTransaction(onClick:()->Unit) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -147,7 +147,7 @@ fun AddTransaction() {
                     Text("Add Transaction")
                 },
                 navigationIcon = {
-                    IconButton(onClick = {  }) {
+                    IconButton(onClick = { onClick }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Localized description"
@@ -206,7 +206,7 @@ fun AddTransaction() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Demo_ExposedDropdownMenuBox() {
+fun Demo_ExposedDropdownMenuBox(onClick:()->Unit) {
     val context = LocalContext.current
     val coffeeDrinks = arrayOf("Income","Expense")
     var expanded by remember { mutableStateOf(false) }
@@ -253,7 +253,7 @@ fun Demo_ExposedDropdownMenuBox() {
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OverviewScreen() {
+fun OverviewScreen(onClick:()->Unit) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -265,7 +265,7 @@ fun OverviewScreen() {
                     Text("")
                 },
                 navigationIcon = {
-                    IconButton(onClick = {  }) {
+                    IconButton(onClick = { onClick }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Localized description"
