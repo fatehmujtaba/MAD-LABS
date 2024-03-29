@@ -80,23 +80,25 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App() {
     val navController= rememberNavController()
-    NavHost(navController = navController, startDestination = "register"){
-        composable(route="login"){
+    NavHost(navController = navController, startDestination = "mainscreen"){
+        composable(route="mainscreen"){
             MainScreen {
                 navController.navigate("mainscreen")
             }
         }
         composable(route="addtransaction"){
             AddTransaction {
-                navController.navigate("login")
+                navController.navigate("addtransaction")
+            }}
+        composable(route="overview"){
+            OverviewScreen {
+                navController.navigate("overview")
             }
-             OverviewScreen{
-                navController.navigate("login")
-            }
+        }
         }
     }
 
-}
+
 @Composable
 fun SplashScreen(navController: NavController) {
     Surface(color = Color.Gray) {
